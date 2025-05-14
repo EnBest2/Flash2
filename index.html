@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tanulókártyák</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+</head>
+<body>
+    <header>
+        <h1>Tanulókártyák</h1>
+        <div class="header-controls">
+            <select id="categoryFilter">
+                <option value="all">Összes</option>
+                <option value="Irodalom">Irodalom</option>
+                <option value="Nyelvtan">Nyelvtan</option>
+                <option value="Történelem">Történelem</option>
+                <option value="Angol">Angol</option>
+            </select>
+            <button id="newCardBtn">Új kártya</button>
+        </div>
+    </header>
+
+    <div class="sidebar">
+        <button id="uploadFileBtn">Fájl feltöltése</button>
+        <input type="file" id="fileInput" accept="image/*,application/pdf" style="display: none;">
+    </div>
+
+    <div class="card-grid" id="cardGrid"></div>
+
+    <div class="modal" id="cardModal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Új kártya</h2>
+            <form id="cardForm">
+                <label for="title">Cím:</label>
+                <input type="text" id="title" required>
+                <label for="description">Leírás:</label>
+                <textarea id="description" required></textarea>
+                <label for="category">Kategória:</label>
+                <select id="category" required>
+                    <option value="Irodalom">Irodalom</option>
+                    <option value="Nyelvtan">Nyelvtan</option>
+                    <option value="Történelem">Történelem</option>
+                    <option value="Angol">Angol</option>
+                </select>
+                <label for="attachment">Csatolmány:</label>
+                <select id="attachment">
+                    <option value="none">Nincs</option>
+                    <option value="photo">Fotó</option>
+                    <option value="pdf">PDF</option>
+                </select>
+                <input type="file" id="attachmentFile" accept="image/*,application/pdf" style="display: none;">
+                <button type="submit">Mentés</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
